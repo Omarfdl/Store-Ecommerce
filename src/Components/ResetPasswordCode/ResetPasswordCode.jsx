@@ -3,9 +3,8 @@ import style from "./ResetPasswordCode.module.css";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import axios from "axios";
-import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-
+// import toast from "../../../node_modules/react-hot-toast/"
 export default function ResetPasswordCode() {
   const [loadingSpinner, setloadingSpinner] = useState(false);
   let navigate = useNavigate();
@@ -19,12 +18,12 @@ export default function ResetPasswordCode() {
         resetCode: values.code,
       })
       .then((res) => {
-        toast.success("Your Code Is Correct!");
+        // toast.success("Your Code Is Correct!");
         navigate("/updatepassword");
         // console.log("Success:", res.data);
       })
       .catch((err) => {
-        toast.error("This didn't work, Try Again Please.");
+        // toast.error("This didn't work, Try Again Please.");
         // console.log("Error Response:", err.response?.data);
         // console.log("Error Details:", err);
       })

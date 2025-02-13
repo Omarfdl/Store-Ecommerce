@@ -3,7 +3,7 @@ import style from "./UpdatePassword.module.css";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import axios from "axios";
-import { toast } from "react-hot-toast";
+// import { toast } from "react-hot-toast";
 
 export default function UpdatePassword() {
   const [loadingSpinner, setloadingSpinner] = useState(false);
@@ -18,14 +18,14 @@ export default function UpdatePassword() {
         newPassword: values.newPassword,
       })
       .then((res) => {
-        toast.success("Password Changed Successfully!");
+        // toast.success("Password Changed Successfully!");
         // console.log("Success:", res.data);
       })
       .catch((err) => {
         // console.log("Error Response:", err.response?.data);
-        toast.error(
-          err.response?.data?.message || "This didn't work, Try Again Please."
-        );
+        // toast.error(
+        //   err.response?.data?.message || "This didn't work, Try Again Please."
+        // );
       })
       .finally(() => {
         setloadingSpinner(false);

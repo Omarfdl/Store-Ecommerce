@@ -4,7 +4,7 @@ import axios from "axios";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-hot-toast";
+// import { toast } from "react-hot-toast";
 
 export default function ForgotPassword() {
   const [loadingSpinner, setloadingSpinner] = useState(false);
@@ -18,12 +18,12 @@ export default function ForgotPassword() {
         email: values.email,
       })
       .then((res) => {
-        toast.success("Your Code Is Sent Successfully!");
+        // toast.success("Your Code Is Sent Successfully!");
         return res;
         // console.log(res);
       })
       .catch((err) => {
-        toast.error("This didn't work, Try Again Please.");
+        // toast.error("This didn't work, Try Again Please.");
         return err;
         // console.log(err);
       })

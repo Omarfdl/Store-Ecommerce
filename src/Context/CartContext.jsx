@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
-import toast from "react-hot-toast";
+// import  {toast}  from '../../node_modules/react-hot-toast';
 
 export let CartContext = createContext();
 
@@ -31,12 +31,12 @@ export default function CartContextProvider({ children }) {
     mutationFn: addToCart,
 
     onSuccess: () => {
-      toast.success("Successfully Add To Your Cart!");
+      // toast.success("Successfully Add To Your Cart!");
       queryClient.invalidateQueries(["cartProduct"]);
     },
 
     onError: (error) => {
-      toast.error("This didn't work, Try Again Later.");
+      // toast.error("This didn't work, Try Again Later.");
     },
   });
 
@@ -63,13 +63,13 @@ export default function CartContextProvider({ children }) {
     },
 
     onSuccess: (data) => {
-      toast.success("Count Updated Successfully!");
+      // toast.success("Count Updated Successfully!");
       setLoadingProductId(null);
       queryClient.invalidateQueries(["cartProduct"]);
     },
 
     onError: (error) => {
-      toast.error("This didn't work, Try Again Please.");
+      // toast.error("This didn't work, Try Again Please.");
       setLoadingProductId(null);
     },
   });
