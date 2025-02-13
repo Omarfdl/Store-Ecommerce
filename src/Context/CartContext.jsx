@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
-import toast from "./../node_modules/react-hot-toast/src/index";
+import toast from "react-hot-toast";
 
 export let CartContext = createContext();
 

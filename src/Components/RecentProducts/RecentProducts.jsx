@@ -3,7 +3,7 @@ import style from "./RecentProducts.module.css";
 import { Link } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
 import Spinner from "../spinner/spinner";
-import { useCart } from "../../../Context/CartContext";
+import { useCart } from "../../Context/CartContext";
 
 export default function RecentProducts() {
   let { data, isError, isLoading, refetch, error } = useProducts();

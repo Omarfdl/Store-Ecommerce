@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./CheckOut.module.css";
 import { useFormik } from "formik";
-import { useCart } from "../../../Context/CartContext";
+import { useCart } from "../../Context/CartContext";
 // import { useOrders } from "../../../Context/OrdersContext";
 
 export default function CheckOut() {

@@ -59,16 +59,17 @@ export default function CategoriesSlider() {
           {/* key ? */}
           {data?.data?.data.length &&
             data?.data?.data.map((category) => (
-              <>
-                <div className="w-1/8 text-left p-2">
-                  <img
-                    className="w-full lg:h-[250px] md:h-[270px] h-[430px] object-cover rounded-md"
-                    src={category.image}
-                    alt=""
-                  />
-                  <span>{category.name}</span>
-                </div>
-              </>
+              <div
+                key={category?._id}
+                className="w-1/8 text-left p-2"
+              >
+                <img
+                  className="w-full lg:h-[250px] md:h-[270px] h-[430px] object-cover rounded-md"
+                  src={category.image}
+                  alt=""
+                />
+                <span>{category.name}</span>
+              </div>
             ))}
         </Slider>
       </div>

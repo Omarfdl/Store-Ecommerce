@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import style from "./Navbar.module.css";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/freshcart-logo.svg";
-import { UserContext } from "../../../Context/userContext";
+import { UserContext } from "../../Context/userContext";
 
 export default function Navbar() {
   let { userLogin, setuserLogin } = useContext(UserContext);

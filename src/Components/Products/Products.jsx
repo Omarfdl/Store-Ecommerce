@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import useProducts from "../../Hooks/useProducts";
 import Spinner from "../spinner/spinner";
-import { useCart } from "../../../Context/CartContext";
+import { useCart } from "../../Context/CartContext";
 
 export default function Products() {
   let { data, isError, isLoading, refetch, error } = useProducts();

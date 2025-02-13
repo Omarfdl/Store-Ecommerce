@@ -1,5 +1,5 @@
 import style from "./Cart.module.css";
-import { useCart } from "../../../Context/CartContext";
+import { useCart } from "../../Context/CartContext";
 import Spinner from "../spinner/spinner";
 import { Link } from "react-router-dom";
 

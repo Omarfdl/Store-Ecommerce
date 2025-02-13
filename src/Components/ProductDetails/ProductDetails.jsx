@@ -5,7 +5,7 @@ import axios from "axios";
 import Slider from "react-slick";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../spinner/spinner";
-import { useCart } from "../../../Context/CartContext";
+import { useCart } from "../../Context/CartContext";
 
 export default function ProductDetails() {
   const [relatedproducts, setrelatedproducts] = useState([]);
