@@ -1,5 +1,5 @@
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Components/Layout/Layout";
 import Cart from "./Components/Cart/Cart";
 import Products from "./Components/Products/Products";
@@ -25,106 +25,101 @@ import ResetPasswordCode from "./Components/ResetPasswordCode/ResetPasswordCode"
 import UpdatePassword from "./Components/UpdatePassword/UpdatePassword";
 const queryClient = new QueryClient();
 
-const R = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <Layout></Layout>,
-      children: [
-        {
-          index: true,
-          element: (
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          ),
-        },
-        {
-          path: "cart",
-          element: (
-            <ProtectedRoute>
-              <Cart />
-            </ProtectedRoute>
-          ),
-        },
-        {
-          path: "products",
-          element: (
-            <ProtectedRoute>
-              <Products />
-            </ProtectedRoute>
-          ),
-        },
-        {
-          path: "categories",
-          element: (
-            <ProtectedRoute>
-              <Categories />
-            </ProtectedRoute>
-          ),
-        },
-        {
-          path: "brands",
-          element: (
-            <ProtectedRoute>
-              <Brands />
-            </ProtectedRoute>
-          ),
-        },
-        {
-          path: "brands/:brandId",
-          element: (
-            <ProtectedRoute>
-              <BrandDetails />
-            </ProtectedRoute>
-          ),
-        },
-        {
-          path: "productdetails/:id/:category",
-          element: (
-            <ProtectedRoute>
-              <ProductDetails />
-            </ProtectedRoute>
-          ),
-        },
-        {
-          path: "checkout",
-          element: (
-            <ProtectedRoute>
-              <CheckOut />
-            </ProtectedRoute>
-          ),
-        },
-        {
-          path: "allorders",
-          element: (
-            <ProtectedRoute>
-              <AllOrders />
-            </ProtectedRoute>
-          ),
-        },
-        {
-          path: "forgotpassword",
-          element: <ForgotPassword />,
-        },
-        {
-          path: "resetpassword",
-          element: <ResetPasswordCode />,
-        },
-        {
-          path: "updatepassword",
-          element: <UpdatePassword />,
-        },
-        { path: "login", element: <Login /> },
-        { path: "register", element: <Register /> },
-        { path: "*", element: <Notfound /> },
-      ],
-    },
-  ],
+const R = createHashRouter([
   {
-    basename: "/Store-Ecommerce",
-  }
-);
+    path: "/",
+    element: <Layout></Layout>,
+    children: [
+      {
+        index: true,
+        element: (
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "cart",
+        element: (
+          <ProtectedRoute>
+            <Cart />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "products",
+        element: (
+          <ProtectedRoute>
+            <Products />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "categories",
+        element: (
+          <ProtectedRoute>
+            <Categories />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "brands",
+        element: (
+          <ProtectedRoute>
+            <Brands />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "brands/:brandId",
+        element: (
+          <ProtectedRoute>
+            <BrandDetails />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "productdetails/:id/:category",
+        element: (
+          <ProtectedRoute>
+            <ProductDetails />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "checkout",
+        element: (
+          <ProtectedRoute>
+            <CheckOut />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "allorders",
+        element: (
+          <ProtectedRoute>
+            <AllOrders />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "forgotpassword",
+        element: <ForgotPassword />,
+      },
+      {
+        path: "resetpassword",
+        element: <ResetPasswordCode />,
+      },
+      {
+        path: "updatepassword",
+        element: <UpdatePassword />,
+      },
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
+      { path: "*", element: <Notfound /> },
+    ],
+  },
+]);
 
 function App() {
   return (
