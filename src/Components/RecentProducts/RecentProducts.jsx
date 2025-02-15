@@ -48,7 +48,7 @@ export default function RecentProducts() {
               </Link>
               <button
                 onClick={() => addToCart(product.id)}
-                className="btn uppercase mt-2 lg:mb-4 bg-emerald-400 rounded-b-md text-white font-bold py-1 w-full"
+                className="btn uppercase mt-2 lg:mb-4 bg-emerald-400 rounded-b-md text-white font-bold py-1 w-full hover:bg-emerald-600"
               >
                 Add to cart
               </button>

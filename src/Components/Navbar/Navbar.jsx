@@ -36,7 +36,6 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-6">
-          {userLogin && (
             <ul className="flex gap-4 text-gray-600 items-center">
               <li className="linkHover">
                 <NavLink to="">Home</NavLink>
@@ -54,7 +53,6 @@ export default function Navbar() {
                 <NavLink to="brands">Brands</NavLink>
               </li>
             </ul>
-          )}
         </div>
 
         {/* Authentication & Social Links */}
@@ -126,7 +124,6 @@ export default function Navbar() {
           menuOpen ? "h-auto shadow-lg p-5" : "h-0 overflow-hidden"
         }`}
       >
-        {userLogin && (
           <ul className="flex flex-col gap-4 text-gray-600 text-center">
             <li className="linkHover">
               <NavLink to="" onClick={() => setMenuOpen(false)}>
@@ -154,7 +151,6 @@ export default function Navbar() {
               </NavLink>
             </li>
           </ul>
-        )}
 
         <ul className="flex flex-col gap-2 text-center mt-4">
           {userLogin ? (

@@ -19,10 +19,10 @@ import CartContextProvider from "./Context/CartContext";
 import OrdersContextProvider from "./Context/OrdersContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "./../node_modules/@tanstack/react-query-devtools/src/production";
-import { Toaster } from "./../node_modules/react-hot-toast/src/index";
 import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
 import ResetPasswordCode from "./Components/ResetPasswordCode/ResetPasswordCode";
 import UpdatePassword from "./Components/UpdatePassword/UpdatePassword";
+import { Toaster } from "react-hot-toast";
 const queryClient = new QueryClient();
 
 const R = createHashRouter([
@@ -48,43 +48,23 @@ const R = createHashRouter([
       },
       {
         path: "products",
-        element: (
-          <ProtectedRoute>
-            <Products />
-          </ProtectedRoute>
-        ),
+        element: <Products />,
       },
       {
         path: "categories",
-        element: (
-          <ProtectedRoute>
-            <Categories />
-          </ProtectedRoute>
-        ),
+        element: <Categories />,
       },
       {
         path: "brands",
-        element: (
-          <ProtectedRoute>
-            <Brands />
-          </ProtectedRoute>
-        ),
+        element: <Brands />,
       },
       {
         path: "brands/:brandId",
-        element: (
-          <ProtectedRoute>
-            <BrandDetails />
-          </ProtectedRoute>
-        ),
+        element: <BrandDetails />,
       },
       {
         path: "productdetails/:id/:category",
-        element: (
-          <ProtectedRoute>
-            <ProductDetails />
-          </ProtectedRoute>
-        ),
+        element: <ProductDetails />,
       },
       {
         path: "checkout",
